@@ -2,7 +2,7 @@
 ## การทดลองที่ 1 : ทำความรู้จักกับ JavaScript
 ###  การเพิ่ม JavaScript ลงในเว็บเพจ
 
-JavaScript สามารถเพิ่มลงในเว็บเพจได้ 3 วิธี:
+JavaScript สามารถเพิ่มลงในเว็บเพจได้ 3 
 
 1. แบบ Inline: แทรก scipt ในแต่ละบรรทัดของ HTML Element
 ```html
