@@ -91,9 +91,18 @@ JavaScript สามารถเพิ่มลงในเว็บเพจไ
 
     <!-- ทดสอบ External JavaScript -->
     <button id="btn3" onclick="hello3();">ปุ่มที่ 3</button>
-    
-    <script src="script.js"></script>
-    
+
+    <script>
+        function showtext(){
+            var text = document.getElementById("inputText").value;
+            alert('ข้อความที่กรอก ' + text);
+ 
+        }
+    </script>
+ <input type="text" id="inputText" placeholder="พิมพ์ข้อความที่นี่">
+ <button onclick="showtext()">แสดงข้อความ</button>
+ 
+   
 </body>
 </html>
 function hello3(){
@@ -103,6 +112,7 @@ function hello3(){
 [![image](https://github.com/user-attachments/assets/f390796c-03c1-421b-a5e5-46bcedf210e2)
 ![image](https://github.com/user-attachments/assets/a0e3b1d3-fa7f-445a-80c5-e346c0e62b19)
 ![image](https://github.com/user-attachments/assets/25984c2f-c5a2-4b3d-b137-ee07837bf333)
+![image](https://github.com/user-attachments/assets/09cfcaf9-0023-4284-a009-40f6a072dfac)
 ]
   
 ## การทดลองที่ 2: พื้นฐาน JavaScript
