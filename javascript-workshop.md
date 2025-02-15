@@ -254,9 +254,44 @@ number /= 2;          // เท่ากับ number = number / 2
 
 ### บันทึกผลการทดลอง 2.2
 ```html
-[บันทึกโค้ด ที่นี่]
+[<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let product = 30
+        let technogy = 20
+        let history = 8
+
+        let caculate = product + technogy + history;
+        let caculate_a = caculate / 3
+
+        console.log(caculate_a); 
+    </script>
+
+    <script>
+        let productname = "Car";
+        let productprice = 800000
+
+        let vat = productprice * 0.07
+        let total = productprice + vat
+
+        console.log("Product :" + productname);
+        console.log("Productprice :" + productprice +"Bath");
+        console.log("VAT 7% :" + vat.toFixed(2) + "Bath");
+        console.log("SumpriecVAT 7% :" + total.toFixed(2) + "Bath");
+    </script>
+
+</body>
+</html>]
 ```
-[รูปผลการทดลองที่ 2.2]
+[![{4D08A262-8D64-4592-AF72-74831967021D}](https://github.com/user-attachments/assets/74dab3be-26e4-41b9-815e-2c21203cf775)
+]
 
 ### 2.3 การควบคุมการทำงาน
 
@@ -389,7 +424,8 @@ for (let i = 1; i <= 5; i++) {
 ```html
 [บันทึกโค้ด ที่นี่]
 ```
-[รูปผลการทดลองที่ 2.3]
+[![Uploading {A4785B1B-451C-493E-B81C-ABE047BD2099}.png…]()
+]
 
 ### 2.4 Functions และ Arrow Functions
 
