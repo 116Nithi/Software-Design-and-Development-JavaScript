@@ -456,7 +456,8 @@ if (age >= 0 && age <= 12) {
     console.log(age + " เป็นวัยผู้ใหญ่");
 }]
 ```
-[![Uploading {A4785B1B-451C-493E-B81C-ABE047BD2099}.png…]()
+[![{DE04945B-7B35-4351-8905-7939A22C311F}](https://github.com/user-attachments/assets/0ea113b8-e501-4f91-8666-44a963027e2a)
+![{EC1FD10C-DCFF-45A4-9432-0FB8A70C2332}](https://github.com/user-attachments/assets/0819e54c-1af8-4a9f-a886-ec0d90821e3b)
 ]
 
 ### 2.4 Functions และ Arrow Functions
