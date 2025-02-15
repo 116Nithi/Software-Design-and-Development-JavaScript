@@ -1,4 +1,4 @@
-# การทดลอง พื้นฐาน JavaScript และการใช้งานร่วมกับ HTML/CSS
+![{4A23153F-A88E-4F90-B683-14BD42D54729}](https://github.com/user-attachments/assets/ac057b70-bb87-4b5b-8786-e5641519cb33)# การทดลอง พื้นฐาน JavaScript และการใช้งานร่วมกับ HTML/CSS
 ## การทดลองที่ 1 : ทำความรู้จักกับ JavaScript
 ###  การเพิ่ม JavaScript ลงในเว็บเพจ
 
@@ -570,9 +570,46 @@ process(function() {
 
 ### บันทึกผลการทดลอง 2.4.1
 ```html
-[บันทึกโค้ด ที่นี่]
+[function calculateBMI(weight, height) {
+    let bmi = weight / (height * height);
+    return bmi.toFixed(2);
+}
+// ทดสอบใช้งาน
+console.log("BMI:", calculateBMI(70, 1.75));
+
+function greetUser(name, age) {
+    let message = "";
+
+    if (age < 13) {
+        message = "สวัสดีครับน้องสุดที่รัก " + name;
+    } else if (age < 20) {
+        message = "สวัสดีครับเพื่อนรัก  " + name;
+    } else {
+        message = "สวัสดีครับคุณพี่สุดที่รัก " + name;
+    }
+
+    console.log(message);
+}
+
+// ทดสอบใช้งาน
+greetUser("นิธิ", 10);
+greetUser("ภัทรพล", 18);
+greetUser("นวพล", 25);
+
+function checkPassword(password) {
+    if (password.length > 8) {
+        return "รหัสผ่านโครตปลอดภัย";
+    } else {
+        return "รหัสผ่านโคตรสั้น";
+    }
+}
+
+// ทดสอบใช้งาน
+console.log(checkPassword("Nithi"));
+console.log(checkPassword("67030116"));]
 ```
-[รูปผลการทดลองที่ 2.4.1]
+[![{E627E91B-573A-4556-9BB6-8CD13FBFA6E2}](https://github.com/user-attachments/assets/8d121a68-d073-48d1-b19d-f6fb1a4056a0)
+]
 
 
 
@@ -613,9 +650,30 @@ console.log("เลขคู่:", evenNumbers); // [2, 4]
 
 ### บันทึกผลการทดลอง 2.4.2
 ```html
-[บันทึกโค้ด ที่นี่]
+[const calculateBMI = (weight, height) => (weight / (height ** 2)).toFixed(2);
+
+// ทดสอบใช้งาน
+console.log("BMI:", calculateBMI(54, 1.70)); // น้ำหนัก 54 กก. ส่วนสูง 1.70 เมตร
+
+const greetUser = (name, age) => {
+    return age < 13 ? `สวัสดีครับน้องสุดที่รัก ${name}` :
+           age < 20 ? `สวัสดีครับเพื่อนรัก ${name}` :
+                      `สวัสดีครับคุณพี่สุดที่รัก ${name}`;
+};
+
+// ทดสอบใช้งาน
+console.log(greetUser("นิธิ", 10));
+console.log(greetUser("ภัทรพล", 18));
+console.log(greetUser("นวพล", 25));
+
+const checkPassword = password => password.length > 8 ? "รหัสผ่านโครตปลอดภัย" : "รหัสผ่านโคตรสั้น";
+
+// ทดสอบใช้งาน
+console.log(checkPassword("Nithi"));
+console.log(checkPassword("67030116"));]
 ```
-[รูปผลการทดลองที่ 2.4.2]
+[![{4A23153F-A88E-4F90-B683-14BD42D54729}](https://github.com/user-attachments/assets/03ec3002-568f-4eec-add0-d6fc06a825d2)
+]
 
 
 ## การทดลองที่ 3 : การใช้ JavaScript กับ HTML และ CSS
