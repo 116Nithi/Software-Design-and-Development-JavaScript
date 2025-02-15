@@ -1,4 +1,4 @@
-![{4A23153F-A88E-4F90-B683-14BD42D54729}](https://github.com/user-attachments/assets/ac057b70-bb87-4b5b-8786-e5641519cb33)# การทดลอง พื้นฐาน JavaScript และการใช้งานร่วมกับ HTML/CSS
+![{911988F0-B4DA-4583-A501-6E941BE38D1D}](https://github.com/user-attachments/assets/fa506ae2-64ac-4e6d-a2c8-856458bae220)![{4A23153F-A88E-4F90-B683-14BD42D54729}](https://github.com/user-attachments/assets/ac057b70-bb87-4b5b-8786-e5641519cb33)# การทดลอง พื้นฐาน JavaScript และการใช้งานร่วมกับ HTML/CSS
 ## การทดลองที่ 1 : ทำความรู้จักกับ JavaScript
 ###  การเพิ่ม JavaScript ลงในเว็บเพจ
 
@@ -741,9 +741,64 @@ console.log(checkPassword("67030116"));]
 
 ### บันทึกผลการทดลอง 3.1
 ```html
-[บันทึกโค้ด ที่นี่]
+[<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คำนวณค่า BMI</title>
+</head>
+<body>
+    <h2>คำนวณค่า BMI</h2>
+    <label for="weight">น้ำหนัก (กิโลกรัม):</label>
+    <input type="number" id="weight" placeholder="ใส่น้ำหนัก" step="0.1"><br><br>
+
+    <label for="height">ส่วนสูง (เซนติเมตร):</label>
+    <input type="number" id="height" placeholder="ใส่ส่วนสูง" step="0.1"><br><br>
+
+    <button onclick="calculateBMI()">คำนวณ BMI</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calculateBMI() {
+            let weight = parseFloat(document.getElementById("weight").value);
+            let height = parseFloat(document.getElementById("height").value);
+
+            // แปลงส่วนสูงจากเซนติเมตรเป็นเมตร
+            height = height / 100;
+
+            // ตรวจสอบค่าที่รับมา
+            if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+                document.getElementById("result").innerHTML = "กรุณากรอกข้อมูลให้ถูกต้อง!";
+                return;
+            }
+
+            // คำนวณค่า BMI
+            let bmi = (weight / (height ** 2)).toFixed(2);
+
+            // กำหนดสถานะตามค่า BMI
+            let status = "";
+            if (bmi < 18.5) {
+                status = "น้ำหนักต่ำกว่าเกณฑ์ (ผอม)";
+            } else if (bmi < 24.9) {
+                status = "น้ำหนักปกติ (สมส่วน)";
+            } else if (bmi < 29.9) {
+                status = "น้ำหนักเกิน (ท้วม)";
+            } else {
+                status = "โรคอ้วน";
+            }
+
+            // แสดงผลลัพธ์
+            document.getElementById("result").innerHTML = `ค่า BMI ของคุณคือ ${bmi} (${status})`;
+        }
+    </script>
+</body>
+</html>
+]
 ```
-[รูปผลการทดลองที่ 3.1]
+[![{911988F0-B4DA-4583-A501-6E941BE38D1D}](https://github.com/user-attachments/assets/c4074df4-6db6-4c55-8133-9b3be45ef996)
+]
 
 ## การทดลองที่ 3.2 : การสร้างฟอร์มสำหรับจองห้องพัก
 การสร้างฟอร์มลงทะเบียนเพื่อรวบรวมข้อมูลที่จำเป็นสำหรับการจองห้องพัก
@@ -903,9 +958,151 @@ console.log(checkPassword("67030116"));]
 
 ### บันทึกผลการทดลอง 3.2.2
 ```html
-[บันทึกโค้ด ที่นี่]
+[<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบจองห้องพักออนไลน์</title>
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #D4418E;
+        }
+
+        h1 {
+            color: #efeffa;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #000000f1;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid rgb(0, 0, 0);
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: hsl(0, 94%, 49%);
+            box-shadow: 0 0 5px rgba(212, 13, 39, 0.3);
+        }
+
+        button {
+            background-color: #000000;
+            color: rgb(253, 253, 253);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0191f1;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>แบบฟอร์มจองห้องพัก</h1>
+    
+    <form id="bookingForm">
+        <div>
+            <label for="fullname">ชื่อ-นามสกุล:</label>
+            <input type="text" id="fullname" name="fullname" required>
+        </div>
+
+        <div>
+            <label for="email">อีเมล:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div>
+            <label for="phone">เบอร์โทรศัพท์:</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+
+        <div>
+            <label for="checkin">วันที่เช็คอิน:</label>
+            <input type="date" id="checkin" name="checkin" required>
+        </div>
+
+        <div>
+            <label for="checkout">วันที่เช็คเอาท์:</label>
+            <input type="date" id="checkout" name="checkout" required>
+        </div>
+
+        <div>
+            <label for="roomtype">ประเภทห้องพัก:</label>
+            <select id="roomtype" name="roomtype" required onchange="updatePrice()">
+                <option value="">กรุณาเลือกประเภทห้องพัก</option>
+                // ผมเพิ่มให้โปรแกรมแสดงราคาห้องของห้องแต่ละระดับ
+                <option value="standard" data-price="1299">ห้องมาตรฐาน (1,299 บาท/คืน)</option>  
+                <option value="deluxe" data-price="2399">ห้องดีลักซ์ (2,399 บาท/คืน)</option>
+                <option value="suite" data-price="4999">ห้องสวีท (4,999 บาท/คืน)</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="guests">จำนวนผู้เข้าพัก:</label>
+            <input type="number" id="guests" name="guests" min="1" max="4" required>
+        </div>
+
+        <div>
+            <strong>ราคาต่อคืน: <span id="roomPrice">-</span> บาท</strong>
+        </div>
+
+        <button type="submit">จองห้องพัก</button>
+    </form>
+
+    <script>
+        function updatePrice() {
+            const roomSelect = document.getElementById("roomtype");
+            const priceDisplay = document.getElementById("roomPrice");
+            const selectedOption = roomSelect.options[roomSelect.selectedIndex];
+            
+            if (selectedOption.value) {
+                priceDisplay.textContent = selectedOption.getAttribute("data-price");
+            } else {
+                priceDisplay.textContent = "-";
+            }
+        }
+    </script>
+</body>
+</html>]
 ```
-[รูปผลการทดลองที่ 3.2.2]
+[เปลี่ยนสี เปลี่ยนนแรงเงา ปรับราคาลงนิดนหน่อย![image](https://github.com/user-attachments/assets/8dd47928-123e-4b0a-adbb-33be5b104f89)
+]
 
 
 ## ขั้นตอนที่ 3.2.3: การเพิ่มฟังก์ชันด้วย JavaScript
