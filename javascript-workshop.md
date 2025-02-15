@@ -169,9 +169,40 @@ let person = {
 
 ### บันทึกผลการทดลอง 2.1
 ```html
-[บันทึกโค้ด ที่นี่]
+[<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let studentnumber = "67030116";
+        let name = "นิธิ ทิพย์ประเสริฐ";
+        const midtermscores = 70;
+        const finalscore = 60;
+
+        let student ={
+            studentnumber: 67030116,
+            name: "นิธิ ทิพย์ประเสริฐ",
+            major:"เทคโนโลยีคอมพิวเตอร์",
+            grade: 3.00
+            }
+
+    </script>
+    <script>
+    console.log(studentnumber); 
+    console.log(name); 
+    console.log(midtermscores); 
+    console.log(finalscore); 
+    console.log(student); 
+    </script>
+</body>
+</html>]
 ```
-[รูปผลการทดลองที่ 2.1]
+[![{F3684C0E-CBE2-4868-9BDD-5BABB0B7545A}](https://github.com/user-attachments/assets/4cb1e508-f708-4a92-8fcb-b95892be9532)
+]
 
 
 ### 2.2 การดำเนินการทางคณิตศาสตร์
