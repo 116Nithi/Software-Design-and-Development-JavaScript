@@ -422,7 +422,39 @@ for (let i = 1; i <= 5; i++) {
 
 ### บันทึกผลการทดลอง 2.3
 ```html
-[บันทึกโค้ด ที่นี่]
+[let number = 7;
+
+if (number % 2 === 0) {
+    console.log(number + " เป็นเลขคู่");
+} else {
+    console.log(number + " เป็นเลขคี่");
+}
+
+console.log("สูตรคูณแม่ 2:");
+for (let i = 1; i <= 12; i++) {
+    console.log(`2 x ${i} = ${2 * i}`);
+}
+
+console.log("\nสูตรคูณแม่ 3");
+let j = 1;
+while (j <= 12) {
+    console.log(`3 x ${j} = ${3 * j}`);
+    j++;
+}
+console.log("นับถอยหลังจาก 10 ถึง 1:");
+for (let i = 10; i >= 1; i--) {
+    console.log(i);
+}
+
+let age = 25;
+
+if (age >= 0 && age <= 12) {
+    console.log(age + " เป็นวัยเด็ก");
+} else if (age >= 13 && age <= 25) {
+    console.log(age + " เป็นวัยรุ่น");
+} else {
+    console.log(age + " เป็นวัยผู้ใหญ่");
+}]
 ```
 [![Uploading {A4785B1B-451C-493E-B81C-ABE047BD2099}.png…]()
 ]
